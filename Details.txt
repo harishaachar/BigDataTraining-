@@ -1,0 +1,16 @@
+OOPs Cocepts:
+------------------------
+Polymorphism:
+BaseClass.java,ABC.java,Human.java(Method Overidding)
+Overload.java,DisplayOverloading3.java,DisplayOverloading.java(Method Overloading)
+---------
+X.java(Inheritance)
+EncapsulationDemo.java(Data Encapsulation)
+--------
+NoteBook.java(Default Contruct)
+CreateDirectory.java(Create directory)
+CompareTwoFilePaths.java( comparing 2 files)
+CompareTwoNumbers.java(if then else)
+Address.java(Assosiation/aggregation)
+Example2.java(Private Public contruct)
+Mobile.java(We can add other method to get access to other properties)

@@ -1,0 +1,71 @@
+vi hadooptest1.txt
+vi hadooptest2.txt
+cat hadooptest1.txt
+cat hadooptest2.txt
+
+hdfs dfs -ls /user/edureka/
+
+hdfs dfs -put hadooptest1.txt /user/edureka/hadooptest/
+hdfs dfs -ls /user/edureka/hadooptest/
+hdfs dfs -cat /user/edureka/hadooptest/hadooptest1.txt
+
+hdfs dfs -put hadooptest2.txt /user/edureka/hadooptest/
+hdfs dfs -ls /user/edureka/hadooptest/
+hdfs dfs -cat /user/edureka/hadooptest/hadooptest2.txt
+
+hdfs dfs -get /user/edureka/hadooptest/hadooptest1.txt /home/
+sudo chmod 777 /home/
+cd /home/
+ls -lrt
+
+hdfs dfs -put hadooptest1.txt /user/edureka/hadooptest/
+hdfs dfs -ls /user/edureka/hadooptest/
+hdfs dfs -cat /user/edureka/hadooptest/hadooptest1.txt
+
+(alterate comond to -put)
+hdfs dfs -copyFromLocal hadooptest1.txt /user/edureka/hadooptest/
+hdfs dfs -ls /user/edureka/hadooptest/
+hdfs dfs -cat /user/edureka/hadooptest/hadooptest1.txt
+
+(alterate comond to -get)
+hdfs dfs -copyToLocal /user/edureka/hadooptest/hadooptest1.txt /home/
+sudo chmod 777 /home/
+cd /home/
+ls -lrt
+
+
+hdfs dfs -chmod 777 /user/edureka/hadooptest/hadooptest1.txt /user/edureka/hadooptest/hadooptest2.txt
+(7-RWX,6-RW,5-RX,4-R)
+
+touch a.txt
+hdfs dfs -moveFromLocal a.txt /user/edureka/hadooptest/
+hdfs dfs -ls /user/edureka/hadooptest/
+
+hdfs dfs -moveToLocal a.txt /home/edureka/
+hdfs dfs -ls /user/edureka/hadooptest/
+
+
+hdfs dfs -mv /user/edureka/hadooptest/hadooptest1.txt /user/edureka/
+hdfs dfs -ls /user/edureka/
+hdfs dfs -ls /user/edureka/hadooptest/
+
+hdfs dfs -touchz /user/edureka/hadooptest/touchz.txt
+hdfs dfs -ls /user/edureka/hadooptest/
+
+(last Kilbytes of file)
+vi kilobytestet.txt
+hdfs dfs -put kilobytestet.txt /user/edureka/hadooptest/
+hdfs dfs -tail /user/edureka/hadooptest/kilobytestet.tx
+
+
+
+
+
+
+
+
+
+
+
+
+

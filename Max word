@@ -1,0 +1,41 @@
+public class MaxMinReducer extends Reducer {
+int max_sum=0;
+int mean=0;
+int count=0;
+Text max_occured_key=new Text();
+Text mean_key=new Text("Mean : ");
+Text count_key=new Text("Count : ");
+int min_sum=Integer.MAX_VALUE;
+Text min_occured_key=new Text();
+
+public void reduce(Text key, Iterable values, Context context) throws IOException, InterruptedException {
+int sum = 0;
+
+   for (IntWritable value : values) {
+         sum += value.get();
+         count++;
+   }
+
+   if(sum < min_sum)
+      {
+          min_sum= sum;
+          min_occured_key.set(key);        
+      }     
+
+
+   if(sum > max_sum) {
+       max_sum = sum;
+       max_occured_key.set(key);
+   }          
+
+   mean=max_sum+min_sum/count;
+}
+
+@Override
+protected void cleanup(Context context) throws IOException, InterruptedException {
+context.write(max_occured_key, new IntWritable(max_sum));
+context.write(min_occured_key, new IntWritable(min_sum));
+context.write(mean_key , new IntWritable(mean));
+context.write(count_key , new IntWritable(count));
+}
+}

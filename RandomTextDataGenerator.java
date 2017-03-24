@@ -10,8 +10,8 @@ import org.apache.hadoop.conf.Configuration;
 
 class RandomTextDataGenerator {
   static final Log LOG = LogFactory.getLog(RandomTextDataGenerator.class);
-  static final String GRIDMIX_DATAGEN_RANDOMTEXT_LISTSIZE = 
-  static final String GRIDMIX_DATAGEN_RANDOMTEXT_WORDSIZE = 
+  static final String GRIDMIX_DATAGEN_RANDOMTEXT_LISTSIZE = "gridmix.datagenerator.randomtext.listsize";
+  static final String GRIDMIX_DATAGEN_RANDOMTEXT_WORDSIZE =  "gridmix.datagenerator.randomtext.wordsize";
   static final int DEFAULT_LIST_SIZE = 200;
   static final int DEFAULT_WORD_SIZE = 10;
   static final long DEFAULT_SEED = 0L;
